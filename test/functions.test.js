@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString, makeLuckyGreeting, getSecondItem
+    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString, makeLuckyGreeting, getSecondItem, getLastItem
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -212,4 +212,32 @@ test('this test should return 37', (expect) => {
     const actual = getSecondItem([20, 37, 5]);
 
     expect.equal(actual, expected);
+});
+
+test('this test should take kiwi, apple, orange, plum and return the last item in the array', (expect) => {
+    const expected = 'plum';
+
+    const actual = getLastItem(['kiwi', 'apple', 'orange', 'plum']);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should take dogs, cats, rats, horses, chickens and return the last item in the array', (expect) => {
+    const expected = 'chickens';
+
+    const actual = getLastItem(['dogs', 'cats', 'rats', 'horses', 'chickens']);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should take 15, 22, 3, 77, 45, 61 and return the last item in the array', (expect) => {
+    const expected = 61;
+
+    const actual = getLastItem([15, 22, 3, 77, 45, 61]);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should take a random number between 0 and 5', (expect) => {
+
 });
