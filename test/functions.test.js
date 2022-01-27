@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString, makeLuckyGreeting, getSecondItem, getLastItem
+    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString, makeLuckyGreeting, getSecondItem, getLastItem, getRandomNumber
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -239,5 +239,16 @@ test('this test should take 15, 22, 3, 77, 45, 61 and return the last item in th
 });
 
 test('this test should take a random number between 0 and 5', (expect) => {
+    const expected = true;
+
+    const value = getRandomNumber();
+    let actual;
+
+    if (value >= 0 && value <= 5){
+        actual = true;
+    }else{
+        actual = false;
+    }
+    expect.equal(actual, expected);
 
 });
