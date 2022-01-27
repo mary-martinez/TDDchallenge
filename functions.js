@@ -84,7 +84,10 @@ Output:
 */
 
 export function returnAsAnArray(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    const newArray = [firstNumber, secondNumber, thirdNumber];
+
+    return newArray;
+    
 }
 
 // This function should take in three numbers and return those numbers mushed together as a string
@@ -100,7 +103,9 @@ Output:
 */
 
 export function returnAsAString(firstNumber, secondNumber, thirdNumber) {
-    return true;
+    const newString = `${firstNumber}${secondNumber}${thirdNumber}`;
+
+    return newString;
 }
 
 // This function should take in two numbers and return a greeting announcing that the sum of those numbers is today's lucky number

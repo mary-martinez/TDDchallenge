@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply
+    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -99,21 +99,71 @@ test('this test should return 8 / 4 * 5', (expect) => {
 
     const actual = divideThenMultiply(8, 4, 5);
 
-    expect.equal(actual, expected)
-})
+    expect.equal(actual, expected);
+});
 
 test('this test should return 0 / 4 * 5', (expect) => {
     const expected = 0 / 4 * 5;
 
     const actual = divideThenMultiply(0, 4, 5);
 
-    expect.equal(actual, expected)
-})
+    expect.equal(actual, expected);
+});
 
 test('this test should return 8 / 0 * 5', (expect) => {
     const expected = 8 / 0 * 5;
 
     const actual = divideThenMultiply(8, 0, 5);
+    // console.log(actual);
+    expect.equal(actual, expected);
+});
+
+test('this test should return inputs 8, 4, 5 as an array', (expect) => {
+    const expected = [8, 4, 5];
+
+    const actual = returnAsAnArray(8, 4, 5);
     console.log(actual);
-    expect.equal(actual, expected)
-})
+    expect.deepEqual(actual, expected);
+});
+
+test('this test should return inputs 12, 7, 4 as an array', (expect) => {
+    const expected = [12, 7, 4];
+
+    const actual = returnAsAnArray(12, 7, 4);
+    console.log(actual);
+    expect.deepEqual(actual, expected);
+});
+
+test('this test should return inputs 15, 1, 9 as an array', (expect) => {
+    const expected = [15, 1, 9];
+
+    const actual = returnAsAnArray(15, 1, 9);
+    console.log(actual);
+    expect.deepEqual(actual, expected);
+});
+
+test('this test should take 20, 5, 8 and return mushed as a string 2058', (expect) => {
+    const expected = '2058';
+
+    const actual = returnAsAString(20, 5, 8);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should take 40, 6, 7 and return mushed as a string 4067', (expect) => {
+    const expected = '4067';
+
+    const actual = returnAsAString(40, 6, 7);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should take 60, 8, -6 and return mushed as a string 608-6', (expect) => {
+    const expected = '608-6';
+
+    const actual = returnAsAString(60, 8, -6);
+
+    expect.equal(actual, expected);
+});
+
+
