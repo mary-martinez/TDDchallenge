@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString
+    addExclamationPoints, multiplyBySeven, multiplyBy12ThenHalve, divideThenMultiply, returnAsAnArray, returnAsAString, makeLuckyGreeting, getSecondItem
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -166,4 +166,50 @@ test('this test should take 60, 8, -6 and return mushed as a string 608-6', (exp
     expect.equal(actual, expected);
 });
 
+test('this test should tell you your lucky number for the day is 12', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 12.';
 
+    const actual = makeLuckyGreeting(8, 4);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should tell you your lucky number for the day is 20', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 20.';
+
+    const actual = makeLuckyGreeting(10, 10);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should tell you your lucky number for the day is 20.2', (expect) => {
+    const expected = 'Hello! Your lucky number for the day is 20.2.';
+
+    const actual = makeLuckyGreeting(10, 10.2);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should return apple', (expect) => {
+    const expected = 'apple';
+
+    const actual = getSecondItem(['kiwi', 'apple', 'bananas']);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should return 0', (expect) => {
+    const expected = 0;
+
+    const actual = getSecondItem([1, 0, 2]);
+
+    expect.equal(actual, expected);
+});
+
+test('this test should return 37', (expect) => {
+    const expected = '37';
+
+    const actual = getSecondItem([20, 37, 5]);
+
+    expect.equal(actual, expected);
+});
